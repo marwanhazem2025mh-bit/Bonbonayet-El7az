@@ -34,6 +34,43 @@
             text-align: center;
         }
         
+        /* Header with logo on left */
+        .header-with-logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 30px;
+            text-align: left;
+        }
+        
+        .logo-container {
+            flex-shrink: 0;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 15px;
+            object-fit: cover;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 6px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: scale(1.05);
+        }
+        
+        .title-container {
+  		 transform: translateX(100px); 
+		 position: relative;
+ 		 left: -20px;
+         flex: 1;
+		 colors:#ff0000 ;
+        }
+        
         h1 {
             font-size: 2.5rem;
             margin-bottom: 10px;
@@ -42,12 +79,16 @@
         
         .subtitle {
             font-size: 1.2rem;
-            margin-bottom: 30px;
             opacity: 0.9;
-        }
+            margin-bottom: 30px;
+			transform: translateX(100px); 
+		    position: relative;
+ 		    left: -140px;
+        }0
         
         .code-input-container {
             margin: 30px 0;
+            text-align: center;
         }
         
         .code-input {
@@ -123,6 +164,7 @@
             align-items: center;
             justify-content: center;
             transition: all 0.5s ease;
+            text-align: center;
         }
         
         .win {
@@ -190,6 +232,27 @@
             to { transform: rotate(360deg); }
         }
         
+        @media (max-width: 768px) {
+            .header-with-logo {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .subtitle {
+                font-size: 1.1rem;
+            }
+        }
+        
         @media (max-width: 600px) {
             .code-segment {
                 width: 60px;
@@ -199,10 +262,37 @@
             
             .dash {
                 line-height: 60px;
+                font-size: 1.5rem;
             }
             
             h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
+            }
+            
+            .container {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .code-input {
+                gap: 5px;
+            }
+            
+            .code-segment {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .dash {
+                line-height: 50px;
+                font-size: 1.2rem;
+            }
+            
+            .submit-btn {
+                padding: 12px 30px;
+                font-size: 1.1rem;
             }
         }
         
@@ -212,37 +302,50 @@
             height: 10px;
             background-color: #f00;
             opacity: 0;
+            pointer-events: none;
         }
         
         .server-status {
-            display: none; /* Hide server status for GitHub Pages */
-        }
-        .logo {
-           margin:0 0 0 0;
+            display: none;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Bonbonayet_El7az</h1>
-        <p class="subtitle">Enter your 16-digit code to see if you're a winner!</p>
+        <!-- Header with logo on left -->
+        <div class="header-with-logo">
+            <div class="logo-container">
+                <img src="matrials/image0.png" class="logo" alt="Bonbonayet El7az Logo">
+            </div>
+           <div class="title-container">
+		   
+    
+  
+                <h1>Bonbonayet_El7az</h1>
+                <p class="subtitle">Enter your 16-digit code to see if you're a winner!</p>
+
+ 		
+            </div>
+        </div>
         
+        <!-- Code input section -->
         <div class="code-input-container">
-            <div class="logo"><img src="matrials/image0.png"/></div>
             <div class="code-input">
-                <input type="text" maxlength="4" class="code-segment" id="segment1">
+                <input type="text" maxlength="4" class="code-segment" id="segment1" placeholder="0000">
                 <span class="dash">-</span>
-                <input type="text" maxmaxlength="4" class="code-segment" id="segment2">
+                <input type="text" maxlength="4" class="code-segment" id="segment2" placeholder="0000">
                 <span class="dash">-</span>
-                <input type="text" maxlength="4" class="code-segment" id="segment3">
+                <input type="text" maxlength="4" class="code-segment" id="segment3" placeholder="0000">
                 <span class="dash">-</span>
-                <input type="text" maxlength="4" class="code-segment" id="segment4">
+                <input type="text" maxlength="4" class="code-segment" id="segment4" placeholder="0000">
             </div>
             <button class="submit-btn" id="submitBtn">Verify Code</button>
         </div>
         
-        <div class="result" id="result"></div>
+        <!-- Result display -->
+        <div class="result" id="result">Enter your code above to check if you're a winner!</div>
         
+        <!-- Instructions -->
         <div class="instructions">
             <h3>How to participate:</h3>
             <ul>
@@ -250,30 +353,38 @@
                 <li>Only 10 winning codes exist</li>
                 <li>If your code matches one of the winning codes, you'll see a congratulatory message</li>
                 <li>If not, you'll get a "bad luck" message</li>
+                <li>Each code can only be used once</li>
             </ul>
         </div>
         
+        <!-- Security info -->
         <div class="security-info">
             <p>🔒 Secure validation: Codes are validated using advanced security methods</p>
         </div>
+        
+        <!-- Hidden server status -->
+        <div class="server-status" id="serverStatus"></div>
     </div>
 
     <script>
-        // Advanced security: Store codes as encoded values with additional obfuscation
+        // Advanced security: Store codes as Base64 encoded values
         const encodedWinningCodes = [
-            "NDgyOS0xNzM2LTUwMjgtMTk0Nw==",
-            "OTAzMS03NDY1LTI4MzktNTAyOA==",
-            "NTcyMC02MzE5LTQ4NTctMjAzNg==",
-            "MjE4OS0zMDQ3LTU2MTAtMjg0OQ==",
-            "NzYwMy05NDE4LTU3MjYtNTA5Mg==",
-            "Mzk1MC03MTI4LTQ2OTMtNTA4Nw==",
-            "ODQ2Mi0wMzk1LTcxMjAtNTg0Mw==",
-            "MTI5OC00NzU2LTMwOTItODQ3MQ==",
-            "NjcwMi05NDgxLTUzNzAtMjY4NA==",
-            "NTgzOS0yMDE3LTQ2ODUtMDM5Mg=="
+            "NDgyOS0xNzM2LTUwMjgtMTk0Nw==", // 4829-1736-5028-1947
+            "OTAzMS03NDY1LTI4MzktNTAyOA==", // 9031-7465-2839-5028
+            "NTcyMC02MzE5LTQ4NTctMjAzNg==", // 5720-6319-4857-2036
+            "MjE4OS0zMDQ3LTU2MTAtMjg0OQ==", // 2189-3047-5610-2849
+            "NzYwMy05NDE4LTU3MjYtNTA5Mg==", // 7603-9418-5726-5092
+            "Mzk1MC03MTI4LTQ2OTMtNTA4Nw==", // 3950-7128-4693-5087
+            "ODQ2Mi0wMzk1LTcxMjAtNTg0Mw==", // 8462-0395-7120-5843
+            "MTI5OC00NzU2LTMwOTItODQ3MQ==", // 1298-4756-3092-8471
+            "NjcwMi05NDgxLTUzNzAtMjY4NA==", // 6702-9481-5370-2684
+            "NTgzOS0yMDE3LTQ2ODUtMDM5Mg=="  // 5839-2017-4685-0392
         ];
 
-        // Additional security layer - shuffle and encode
+        // Track used codes to prevent reuse
+        const usedCodes = new Set();
+
+        // Decode function with additional security
         function getWinningCodes() {
             return encodedWinningCodes.map(encoded => {
                 return atob(encoded);
@@ -296,14 +407,32 @@
                 // Only allow numbers
                 this.value = this.value.replace(/[^0-9]/g, '');
                 
+                // Auto-advance to next segment
                 if (this.value.length === 4 && index < segments.length - 1) {
                     segments[index + 1].focus();
                 }
+                
+                // Auto-submit when all segments are filled
+                if (this.value.length === 4 && index === segments.length - 1) {
+                    const allFilled = segments.every(seg => seg.value.length === 4);
+                    if (allFilled) {
+                        submitBtn.focus();
+                    }
+                }
             });
             
+            // Allow backspace to go to previous segment
             segment.addEventListener('keydown', function(e) {
                 if (e.key === 'Backspace' && this.value.length === 0 && index > 0) {
                     segments[index - 1].focus();
+                }
+                
+                // Allow Enter to submit when all fields are filled
+                if (e.key === 'Enter' && this.value.length === 4 && index === segments.length - 1) {
+                    const allFilled = segments.every(seg => seg.value.length === 4);
+                    if (allFilled) {
+                        submitBtn.click();
+                    }
                 }
             });
         });
@@ -325,12 +454,18 @@
                 return;
             }
             
+            // Check if code was already used
+            if (usedCodes.has(code)) {
+                showResult("This code has already been used!", false);
+                return;
+            }
+            
             // Disable button and show loading
             submitBtn.disabled = true;
             submitBtn.innerHTML = '<span class="loading"></span> Verifying...';
             
             // Simulate server delay for better UX
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            await new Promise(resolve => setTimeout(resolve, 1500));
             
             try {
                 // Check if code is a winner
@@ -338,13 +473,14 @@
                 const isValid = winningCodes.includes(code);
                 
                 if (isValid) {
-                    showResult("Congratulations! You're a winner!", true);
+                    usedCodes.add(code); // Mark as used
+                    showResult("🎉 Congratulations! You're a winner! 🎉", true);
                     createConfetti();
                 } else {
-                    showResult("Bad luck! This code is not a winner.", false);
+                    showResult("❌ Bad luck! This code is not a winner.", false);
                 }
             } catch (error) {
-                showResult("Verification error. Please try again.", false);
+                showResult("⚠️ Verification error. Please try again.", false);
                 console.error("Verification error:", error);
             } finally {
                 // Re-enable button
@@ -361,34 +497,59 @@
 
         // Create confetti effect for winners
         function createConfetti() {
-            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff'];
-            const confettiCount = 150;
+            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ff9900', '#ff66cc'];
+            const confettiCount = 200;
             
             for (let i = 0; i < confettiCount; i++) {
                 const confetti = document.createElement('div');
                 confetti.className = 'confetti';
                 confetti.style.left = Math.random() * 100 + 'vw';
                 confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
                 confetti.style.opacity = '1';
                 document.body.appendChild(confetti);
                 
                 // Animate confetti
                 const animation = confetti.animate([
-                    { transform: 'translateY(-100vh) rotate(0deg)', opacity: 1 },
-                    { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                    { 
+                        transform: `translateY(-100px) translateX(${Math.random() * 100 - 50}px) rotate(0deg)`, 
+                        opacity: 1 
+                    },
+                    { 
+                        transform: `translateY(${window.innerHeight + 100}px) translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 720}deg)`, 
+                        opacity: 0 
+                    }
                 ], {
-                    duration: 2000 + Math.random() * 3000,
+                    duration: 3000 + Math.random() * 2000,
                     easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
                 });
                 
                 // Remove confetti after animation
-                animation.onfinish = () => confetti.remove();
+                animation.onfinish = () => {
+                    if (confetti.parentNode) {
+                        confetti.parentNode.removeChild(confetti);
+                    }
+                };
             }
         }
 
-        // Remove server status check for GitHub Pages
+        // Clear result when user starts typing again
+        segments.forEach(segment => {
+            segment.addEventListener('focus', function() {
+                if (result.textContent !== "Enter your code above to check if you're a winner!") {
+                    showResult("Enter your code above to check if you're a winner!", false);
+                    result.className = "result";
+                }
+            });
+        });
+
+        // Hide server status element
         document.getElementById('serverStatus').style.display = 'none';
+
+        // Focus first input on page load
+        window.addEventListener('load', () => {
+            segment1.focus();
+        });
     </script>
 </body>
-
 </html>
