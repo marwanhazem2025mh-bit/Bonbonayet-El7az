@@ -346,9 +346,8 @@
             <h3>How to participate:</h3>
             <ul>
                 <li>Enter your 16-digit code in the format XXXX-XXXX-XXXX-XXXX</li>
-                <li>Only 10 winning codes exist</li>
                 <li>If your code matches one of the winning codes, you'll see a congratulatory message</li>
-                <li>If not, you'll get a "bad luck" message</li>
+                <li>If not, you'll get a "Better luck next time" message</li>
                 <li>Each code can only be used once</li>
             </ul>
         </div>
@@ -365,16 +364,16 @@
     <script>
         // Advanced security: Store codes as Base64 encoded values
         const encodedWinningCodes = [
-            "NDgyOS0xNzM2LTUwMjgtMTk0Nw==", // 4829-1736-5028-1947
-            "OTAzMS03NDY1LTI4MzktNTAyOA==", // 9031-7465-2839-5028
-            "NTcyMC02MzE5LTQ4NTctMjAzNg==", // 5720-6319-4857-2036
-            "MjE4OS0zMDQ3LTU2MTAtMjg0OQ==", // 2189-3047-5610-2849
-            "NzYwMy05NDE4LTU3MjYtNTA5Mg==", // 7603-9418-5726-5092
-            "Mzk1MC03MTI4LTQ2OTMtNTA4Nw==", // 3950-7128-4693-5087
-            "ODQ2Mi0wMzk1LTcxMjAtNTg0Mw==", // 8462-0395-7120-5843
-            "MTI5OC00NzU2LTMwOTItODQ3MQ==", // 1298-4756-3092-8471
-            "NjcwMi05NDgxLTUzNzAtMjY4NA==", // 6702-9481-5370-2684
-            "NTgzOS0yMDE3LTQ2ODUtMDM5Mg=="  // 5839-2017-4685-0392
+            "NDgyOS0xNzM2LTUwMjgtMTk0Nw==",
+            "OTAzMS03NDY1LTI4MzktNTAyOA==",
+            "NTcyMC02MzE5LTQ4NTctMjAzNg==",
+            "MjE4OS0zMDQ3LTU2MTAtMjg0OQ==",
+            "NzYwMy05NDE4LTU3MjYtNTA5Mg==",
+            "Mzk1MC03MTI4LTQ2OTMtNTA4Nw==",
+            "ODQ2Mi0wMzk1LTcxMjAtNTg0Mw==",
+            "MTI5OC00NzU2LTMwOTItODQ3MQ==",
+            "NjcwMi05NDgxLTUzNzAtMjY4NA==",
+            "NTgzOS0yMDE3LTQ2ODUtMDM5Mg==" 
         ];
 
         // Track used codes to prevent reuse
@@ -473,7 +472,7 @@
                     showResult("🎉 Congratulations! You're a winner! 🎉", true);
                     createConfetti();
                 } else {
-                    showResult("❌ Bad luck! This code is not a winner.", false);
+                    showResult("❌Better luck next time! This code is not a winner.", false);
                 }
             } catch (error) {
                 showResult("⚠️ Verification error. Please try again.", false);
@@ -549,4 +548,5 @@
     </script>
 </body>
 </html>
+
 
