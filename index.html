@@ -452,7 +452,7 @@
                 <li>If not, you'll get a "Better luck next time" message</li>
                 <li>Each code can only be used once</li>
 				<li>make follow for facebook page from the link bellow</li>
-				<li>if you won take a screenshot and send it with your phone number</li>
+				<li>if you won take a screenshot and send it with your phone number to our page</li>
             </ul>
 			<div class="social-section">
             <h3>Follow your social media pages</h3>
@@ -582,12 +582,10 @@
             "MTIzNTIxMTg=", "Y2FyZDI1", "MTIzNzM3NDk=", "Y2FyZDI1"
         ];
 
-        // Decryption function
         const decrypt = (str) => {
             return atob(str);
         };
 
-        // Build database dynamically
         const buildDatabase = () => {
             const db = {};
             for (let i = 0; i < encryptedData.length; i += 2) {
@@ -607,40 +605,34 @@
         };
     })();
 
-    // === SECURITY LAYER 2: SIMPLIFIED SECURITY (NO CODE REUSE TRACKING) ===
     const dynamicSecurity = (function() {
         let verificationAttempts = 0;
-        const maxAttempts = 1000; // Very high limit
+        const maxAttempts = 3;
         
         return {
             markUsed: (code) => {
-                // DO NOTHING - codes can be reused
                 verificationAttempts++;
             },
             isUsed: (code) => {
-                return false; // Always return false - codes never get "used"
-            },
+                return false;
             isSuspicious: () => verificationAttempts > maxAttempts,
             resetAttempts: () => { verificationAttempts = 0; }
         };
     })();
 
-    // === SECURITY LAYER 3: SIMPLIFIED INTEGRITY CHECK ===
     const antiTamper = (function() {
         return {
             verifyIntegrity: () => {
-                return true; // Always pass integrity check
+                return true;
             }
         };
     })();
 
-    // Get DOM elements
     const segment1 = document.getElementById('segment1');
     const segment2 = document.getElementById('segment2');
     const submitBtn = document.getElementById('submitBtn');
     const result = document.getElementById('result');
 
-    // Auto-focus and auto-tab functionality
     const segments = [segment1, segment2];
     
     segments.forEach((segment, index) => {
@@ -673,7 +665,6 @@
         });
     });
 
-    // Submit button functionality
     submitBtn.addEventListener('click', async function() {
         const fullCode = segment1.value + segment2.value;
         
@@ -687,8 +678,6 @@
             showResult("Invalid code format. Please enter exactly 8 digits", false);
             return;
         }
-
-        // REMOVED: Code reuse check - now codes can be used multiple times
         
         submitBtn.disabled = true;
         submitBtn.innerHTML = '<span class="loading"></span> Verifying...';
@@ -699,7 +688,6 @@
             const prize = secureDatabase.checkWinner(fullCode);
             
             if (prize) {
-                // REMOVED: dynamicSecurity.markUsed(fullCode); - Don't mark as used
                 const prizeText = getPrizeText(prize);
                 showResult(`🎉 Congratulations! You've won: ${prizeText} 🎉`, true);
                 createConfetti();
@@ -715,27 +703,24 @@
         }
     });
 
-    // Convert prize code to readable text
     function getPrizeText(prizeCode) {
         const prizeMap = {
-            'card100': '100 EGP Gift Card',
-            'card50': '50 EGP Gift Card', 
-            'card25': '25 EGP Gift Card',
-            'phone': 'Smart Phone',
-            'airpods': 'Wireless AirPods',
-            'smart watch': 'Smart Watch',
-            'power bank': 'Power Bank'
+            'card100': '100 EGP Balance',
+            'card50': '50 EGP Balance', 
+            'card25': '25 EGP Balance',
+            'phone': 'Oppo Reno 14F 256GB 12GB Ram',
+            'airpods': 'Oraimo Space buds Neo',
+            'smart watch': 'Xiaomi Redmi Watch 5 Active',
+            'power bank': 'Xiaomi 20000mAh Redmi 18W Fast Charge'
         };
         return prizeMap[prizeCode] || prizeCode;
     }
 
-    // Show result message
     function showResult(message, isWin) {
         result.textContent = message;
         result.className = isWin ? "result win" : "result lose";
     }
 
-    // Create confetti effect for winners
     function createConfetti() {
         const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ff9900', '#ff66cc'];
         const confettiCount = 200;
@@ -771,7 +756,6 @@
         }
     }
 
-    // Clear result when user starts typing again
     segments.forEach(segment => {
         segment.addEventListener('focus', function() {
             if (result.textContent !== "Enter your code above to check if you're a winner!") {
@@ -781,12 +765,10 @@
         });
     });
 
-    // Focus first input on page load
     window.addEventListener('load', () => {
         segment1.focus();
     });
 
-    // Reset attempts every hour
     setInterval(() => {
         dynamicSecurity.resetAttempts();
     }, 3600000);
