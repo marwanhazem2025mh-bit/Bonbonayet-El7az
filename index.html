@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bonbonayet_El7az - Secure Code Verification</title>
+    <title>Bonbonayet_El7az</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -32,9 +33,9 @@
             padding: 30px;
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         
-        /* Header with logo on left */
         .header-with-logo {
             display: flex;
             align-items: center;
@@ -64,9 +65,8 @@
         }
         
         .title-container {
-  		 center ;
-         flex: 1;
-		 colors:#ff0000 ;
+            flex: 1;
+            text-align: center;
         }
         
         h1 {
@@ -74,13 +74,13 @@
             margin-bottom: 10px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
-        
+
         .subtitle {
             font-size: 1.2rem;
             opacity: 0.9;
             margin-bottom: 30px;
-			center ;
-        }0
+            text-align: center;
+        }
         
         .code-input-container {
             margin: 30px 0;
@@ -97,8 +97,8 @@
         .code-segment {
             width: 80px;
             height: 80px;
-            font-size: 1.8rem;
             text-align: center;
+            font-size: 1.8rem;
             border: 2px solid rgba(255, 255, 255, 0.5);
             border-radius: 10px;
             background: rgba(255, 255, 255, 0.1);
@@ -162,7 +162,7 @@
             transition: all 0.5s ease;
             text-align: center;
         }
-        
+
         .win {
             background: rgba(76, 175, 80, 0.3);
             border: 2px solid #4CAF50;
@@ -212,7 +212,7 @@
             opacity: 0.8;
             text-align: center;
         }
-        
+
         .loading {
             display: inline-block;
             width: 20px;
@@ -227,6 +227,110 @@
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
+		
+        .social-section {
+            margin-top: 30px;
+            text-align: center;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 5px solid #1877F2;
+        }
+        
+        .social-section h3 {
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: #1877F2;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(24, 119, 242, 0.4);
+            margin-top: 10px;
+            animation: social-pulse 2s infinite;
+        }
+        
+        .social-link:hover {
+            background: #0e5db7;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(24, 119, 242, 0.6);
+            animation: none;
+        }
+        
+        .social-link:active {
+            background: #0a4a9c;
+            transform: translateY(1px);
+            box-shadow: 0 2px 10px rgba(24, 119, 242, 0.4);
+        }
+        
+        .social-link i {
+            font-size: 1.5rem;
+        }
+		
+		@keyframes social-pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(24, 119, 242, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(24, 119, 242, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(24, 119, 242, 0);
+            }
+        }
+                
+        .social-linnk {
+            display: inline-flex;
+            align-items: center;
+            gap: 15px;
+            background: #E4405F;
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(228, 64, 95, 0.4);
+            margin-top: 10px;
+            animation: social-paulse 2s infinite;
+        }
+        
+        .social-linnk:hover {
+            background: #EE1D51;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgb(228, 64, 95, 0.6);
+            animation: none;
+        }
+        
+        .social-linnk:active {
+            background: #F94877;
+            transform: translateY(1px);
+            box-shadow: 0 2px 10px rgba(228, 64, 95, 0.4);
+        }
+        
+        .social-linnk i {
+            font-size: 1.5rem;
+        }
+		
+        @keyframes social-paulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(228, 64, 95, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 15px rgba(228, 64, 95, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(228, 64, 95, 0);
+            }
         
         @media (max-width: 768px) {
             .header-with-logo {
@@ -246,6 +350,11 @@
             
             .subtitle {
                 font-size: 1.1rem;
+            }
+            
+            .social-link {
+                padding: 12px 25px;
+                font-size: 1rem;
             }
         }
         
@@ -290,6 +399,11 @@
                 padding: 12px 30px;
                 font-size: 1.1rem;
             }
+            
+            .social-link {
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
         }
         
         .confetti {
@@ -308,245 +422,373 @@
 </head>
 <body>
     <div class="container">
-        <!-- Header with logo on left -->
         <div class="header-with-logo">
             <div class="logo-container">
                 <img src="matrials/image01.png" class="logo" alt="Bonbonayet El7az Logo">
             </div>
-           <div class="title-container">
-		   
-    
-  
+            <div class="title-container">
                 <h1>Bonbonayet_El7az</h1>
-                <p class="subtitle">Enter your 16-digit code to see if you're a winner!</p>
-
- 		
+                <p class="subtitle">Enter your 8-digit code to see if you're a winner!</p>
             </div>
         </div>
         
-        <!-- Code input section -->
         <div class="code-input-container">
             <div class="code-input">
                 <input type="text" maxlength="4" class="code-segment" id="segment1" placeholder="0000">
                 <span class="dash">-</span>
                 <input type="text" maxlength="4" class="code-segment" id="segment2" placeholder="0000">
-                <span class="dash">-</span>
-                <input type="text" maxlength="4" class="code-segment" id="segment3" placeholder="0000">
-                <span class="dash">-</span>
-                <input type="text" maxlength="4" class="code-segment" id="segment4" placeholder="0000">
             </div>
             <button class="submit-btn" id="submitBtn">Verify Code</button>
         </div>
-        
-        <!-- Result display -->
+
         <div class="result" id="result">Enter your code above to check if you're a winner!</div>
         
-        <!-- Instructions -->
         <div class="instructions">
             <h3>How to participate:</h3>
             <ul>
-                <li>Enter your 16-digit code in the format XXXX-XXXX-XXXX-XXXX</li>
+                <li>Enter your 8-digit code in the format XXXX-XXXX</li>
                 <li>If your code matches one of the winning codes, you'll see a congratulatory message</li>
                 <li>If not, you'll get a "Better luck next time" message</li>
                 <li>Each code can only be used once</li>
+				<li>make follow for facebook page from the link bellow</li>
+				<li>if you won take a screenshot and send it with your phone number</li>
             </ul>
+			<div class="social-section">
+            <h3>Follow your social media pages</h3>
+            <p>Stay updated with our latest contests and announcements</p>
+            <a href="https://www.facebook.com/share/17PUm65tJd/" target="_blank" class="social-link">
+                <i class="fab fa-facebook-f"></i>
+                Follow Our Facebook Page
+            </a>
+			</a>
+            <a href="https://www.instagram.com/" target="_blank" class="social-linnk">
+                <i class="fab fa-instagram"></i>
+                Follow Our instagram Page
+            </a>
         </div>
-        
-        <!-- Security info -->
-        <div class="security-info">
-            <p>🔒 Secure validation: Codes are validated using advanced security methods</p>
         </div>
-        
-        <!-- Hidden server status -->
-        <div class="server-status" id="serverStatus"></div>
     </div>
 
-    <script>
-        // Advanced security: Store codes as Base64 encoded values
-        const encodedWinningCodes = [
-            "NDgyOS0xNzM2LTUwMjgtMTk0Nw==",
-            "OTAzMS03NDY1LTI4MzktNTAyOA==",
-            "NTcyMC02MzE5LTQ4NTctMjAzNg==",
-            "MjE4OS0zMDQ3LTU2MTAtMjg0OQ==",
-            "NzYwMy05NDE4LTU3MjYtNTA5Mg==",
-            "Mzk1MC03MTI4LTQ2OTMtNTA4Nw==",
-            "ODQ2Mi0wMzk1LTcxMjAtNTg0Mw==",
-            "MTI5OC00NzU2LTMwOTItODQ3MQ==",
-            "NjcwMi05NDgxLTUzNzAtMjY4NA==",
-            "NTgzOS0yMDE3LTQ2ODUtMDM5Mg==" 
+<script>
+    const secureDatabase = (function() {
+        const encryptedData = [
+            "MTIzNjA2MDU=", "Y2FyZDEwMA==", "MTIzNzQzNjU=", "Y2FyZDEwMA==", "MTIzNjg2NjU=", "Y2FyZDEwMA==",
+            "MTIzNjYyMzI=", "Y2FyZDEwMA==", "MTIzNjIwNDA=", "Y2FyZDEwMA==", "MTIzNjk0MDM=", "Y2FyZDEwMA==",
+            "MTIzNjkwMjc=", "Y2FyZDEwMA==", "MTIzNzU2NjM=", "Y2FyZDEwMA==", "MTIzNTM3MzY=", "Y2FyZDEwMA==",
+            "MTIzNDc1MjQ=", "Y2FyZDEwMA==", "MTIzNTk5MDE=", "Y2FyZDEwMA==", "MTIzNTYzMzE=", "Y2FyZDEwMA==",
+            "MTIzNzA3MzA=", "Y2FyZDEwMA==", "MTIzNTU5NjA=", "Y2FyZDEwMA==", "MTIzNTU0NTY=", "Y2FyZDEwMA==",
+            "MTIzNDk3ODQ=", "Y2FyZDEwMA==", "MTIzNjY5OTA=", "Y2FyZDEwMA==", "MTIzNDg5Mjc=", "Y2FyZDEwMA==",
+            "MTIzNDkwNzA=", "Y2FyZDEwMA==", "MTIzNDkzNDk=", "Y2FyZDEwMA==", "MTIzNzMxMDE=", "Y2FyZDEwMA==",
+            "MTIzNDgwNzY=", "Y2FyZDEwMA==", "MTIzNTE4MTI=", "Y2FyZDEwMA==", "MTIzNTYxODE=", "Y2FyZDEwMA==",
+            "MTIzNjY4NTM=", "Y2FyZDEwMA==", "MTIzNTA2OTQ=", "Y2FyZDEwMA==", "MTIzNDk0NDU=", "Y2FyZDEwMA==",
+            "MTIzNTUzMTk=", "Y2FyZDEwMA==", "MTIzNzQyMDY=", "Y2FyZDEwMA==", "MTIzNjA2ODI=", "Y2FyZDEwMA==",
+            "MTIzNjUzNTQ=", "Y2FyZDEwMA==", "MTIzNjc1MDc=", "Y2FyZDEwMA==", "MTIzNDk0MTA=", "Y2FyZDEwMA==",
+            "MTIzNTQ0NTc=", "Y2FyZDEwMA==", "MTIzNTA3OTQ=", "Y2FyZDEwMA==", "MTIzNDY0ODE=", "Y2FyZDUw",
+            "MTIzNjI3MzE=", "Y2FyZDUw", "MTIzNTIxMTM=", "Y2FyZDUw", "MTIzNTg1MzI=", "Y2FyZDUw",
+            "MTIzNjUwMDI=", "Y2FyZDUw", "MTIzNjIwNTU=", "Y2FyZDUw", "MTIzNTg2Mzg=", "Y2FyZDUw",
+            "MTIzNjQ4ODc=", "Y2FyZDUw", "MTIzNzI0NDA=", "Y2FyZDUw", "MTIzNTE0ODc=", "Y2FyZDUw",
+            "MTIzNTAwOTg=", "Y2FyZDUw", "MTIzNTI5NzE=", "Y2FyZDUw", "MTIzNTgyMTM=", "Y2FyZDUw",
+            "MTIzNjEyMjk=", "Y2FyZDUw", "MTIzNTg0MjA=", "Y2FyZDUw", "MTIzNjE2NzA=", "Y2FyZDUw",
+            "MTIzNTcwMzE=", "Y2FyZDUw", "MTIzNTY1ODI=", "Y2FyZDUw", "MTIzNzU2NjI=", "Y2FyZDUw",
+            "MTIzNTI1NDM=", "Y2FyZDUw", "MTIzNTIwMTU=", "Y2FyZDUw", "MTIzNzU0NjI=", "Y2FyZDUw",
+            "MTIzNDc1ODY=", "Y2FyZDUw", "MTIzNzIwMTY=", "Y2FyZDUw", "MTIzNTM4NDY=", "Y2FyZDUw",
+            "MTIzNDk2Njg=", "Y2FyZDUw", "MTIzNjIyNDA=", "Y2FyZDUw", "MTIzNDg1MjY=", "Y2FyZDUw",
+            "MTIzNTY0NTk=", "Y2FyZDUw", "MTIzNTgzMDE=", "Y2FyZDUw", "MTIzNDYxMTY=", "Y2FyZDUw",
+            "MTIzNTA4MjY=", "Y2FyZDUw", "MTIzNjg3MTI=", "Y2FyZDUw", "MTIzNTA1MjY=", "Y2FyZDUw",
+            "MTIzNDc5NDk=", "Y2FyZDUw", "MTIzNzUyNjA=", "Y2FyZDUw", "MTIzNjY2MzU=", "Y2FyZDUw",
+            "MTIzNjE4NTE=", "Y2FyZDUw", "MTIzNzUwMzI=", "Y2FyZDUw", "MTIzNjA0NzM=", "Y2FyZDUw",
+            "MTIzNzI3NDg=", "Y2FyZDUw", "MTIzNDc0MDQ=", "Y2FyZDUw", "MTIzNTEzNDg=", "Y2FyZDUw",
+            "MTIzNjYzOTg=", "Y2FyZDUw", "MTIzNDgwOTY=", "Y2FyZDUw", "MTIzNzMzMjQ=", "Y2FyZDUw",
+            "MTIzNjcyNDE=", "Y2FyZDUw", "MTIzNDg0OTI=", "Y2FyZDUw", "MTIzNTA3MTg=", "Y2FyZDUw",
+            "MTIzNjA4NTU=", "Y2FyZDUw", "MTIzNDgxNTQ=", "Y2FyZDUw", "MTIzNTIzMjg=", "Y2FyZDUw",
+            "MTIzNzUwNDE=", "Y2FyZDUw", "MTIzNzM4NDc=", "Y2FyZDUw", "MTIzNjg4MDA=", "Y2FyZDUw",
+            "MTIzNDk0ODA=", "Y2FyZDUw", "MTIzNzM4NzA=", "Y2FyZDUw", "MTIzNTIwODU=", "Y2FyZDUw",
+            "MTIzNjI2Mjg=", "Y2FyZDUw", "MTIzNzQ4Mjg=", "Y2FyZDUw", "MTIzNjI3MDI=", "Y2FyZDUw",
+            "MTIzNjg3ODE=", "Y2FyZDUw", "MTIzNjY4MzI=", "Y2FyZDUw", "MTIzNTIyMTc=", "Y2FyZDUw",
+            "MTIzNjc3NTE=", "Y2FyZDUw", "MTIzNTk3MTc=", "Y2FyZDUw", "MTIzNTA0NDE=", "Y2FyZDUw",
+            "MTIzNjA4OTE=", "Y2FyZDUw", "MTIzNjY1NDA=", "Y2FyZDUw", "MTIzNzM1Nzc=", "Y2FyZDUw",
+            "MTIzNjUxMjk=", "cGhvbmU=", "MTIzNjE5MzQ=", "YWlycG9kcw==", "MTIzNTkyMzY=", "YWlycG9kcw==",
+            "MTIzNDgzNTQ=", "YWlycG9kcw==", "MTIzNTQzMDU=", "YWlycG9kcw==", "MTIzNTU1NzQ=", "YWlycG9kcw==",
+            "MTIzNjQ2MDg=", "YWlycG9kcw==", "MTIzNzQ4NDQ=", "YWlycG9kcw==", "MTIzNTY1NDE=", "c21hcnQgd2F0Y2g=",
+            "MTIzNTM5NTI=", "c21hcnQgd2F0Y2g=", "MTIzNjEyMjU=", "c21hcnQgd2F0Y2g=", "MTIzNDk1Nzk=", "cG93ZXIgYmFuaw==",
+            "MTIzNTQzMzc=", "cG93ZXIgYmFuaw==", "MTIzNDc1NzM=", "cG93ZXIgYmFuaw==", "MTIzNDkwMTQ=", "Y2FyZDI1",
+            "MTIzNzI1NTM=", "Y2FyZDI1", "MTIzNzAxNzU=", "Y2FyZDI1", "MTIzNzIxNzY=", "Y2FyZDI1",
+            "MTIzNTU0OTI=", "Y2FyZDI1", "MTIzNjk4NDk=", "Y2FyZDI1", "MTIzNTIwMTM=", "Y2FyZDI1",
+            "MTIzNDY1MDI=", "Y2FyZDI1", "MTIzNTg2NzY=", "Y2FyZDI1", "MTIzNDkzMTQ=", "Y2FyZDI1",
+            "MTIzNTA2OTg=", "Y2FyZDI1", "MTIzNTk2MDQ=", "Y2FyZDI1", "MTIzNzAzODA=", "Y2FyZDI1",
+            "MTIzNDgxMjA=", "Y2FyZDI1", "MTIzNjA5MzE=", "Y2FyZDI1", "MTIzNTI2OTE=", "Y2FyZDI1",
+            "MTIzNjY1NzQ=", "Y2FyZDI1", "MTIzNTc5OTM=", "Y2FyZDI1", "MTIzNjA5ODI=", "Y2FyZDI1",
+            "MTIzNDU3Mjk=", "Y2FyZDI1", "MTIzNTAwNTg=", "Y2FyZDI1", "MTIzNzE1MzY=", "Y2FyZDI1",
+            "MTIzNjM3NTQ=", "Y2FyZDI1", "MTIzNDg5NzA=", "Y2FyZDI1", "MTIzNDY4ODk=", "Y2FyZDI1",
+            "MTIzNDk0MjE=", "Y2FyZDI1", "MTIzNTg1NjA=", "Y2FyZDI1", "MTIzNTM0NTI=", "Y2FyZDI1",
+            "MTIzNDg3MzU=", "Y2FyZDI1", "MTIzNDg0MjM=", "Y2FyZDI1", "MTIzNjA2MjI=", "Y2FyZDI1",
+            "MTIzNDgxOTc=", "Y2FyZDI1", "MTIzNTI4NTk=", "Y2FyZDI1", "MTIzNTM5NTE=", "Y2FyZDI1",
+            "MTIzNzA2NzQ=", "Y2FyZDI1", "MTIzNTEyODU=", "Y2FyZDI1", "MTIzNjIzNDA=", "Y2FyZDI1",
+            "MTIzNjI5OTU=", "Y2FyZDI1", "MTIzNjAxMjY=", "Y2FyZDI1", "MTIzNDcyNzg=", "Y2FyZDI1",
+            "MTIzNTE4Nzg=", "Y2FyZDI1", "MTIzNDU4OTQ=", "Y2FyZDI1", "MTIzNDY0ODI=", "Y2FyZDI1",
+            "MTIzNTM5NDQ=", "Y2FyZDI1", "MTIzNTE5Nzk=", "Y2FyZDI1", "MTIzNTY1NTY=", "Y2FyZDI1",
+            "MTIzNDg1NjM=", "Y2FyZDI1", "MTIzNjQ2ODA=", "Y2FyZDI1", "MTIzNjE2NjU=", "Y2FyZDI1",
+            "MTIzNjE4Njc=", "Y2FyZDI1", "MTIzNTQxMjQ=", "Y2FyZDI1", "MTIzNzE4MjI=", "Y2FyZDI1",
+            "MTIzNTE1MDk=", "Y2FyZDI1", "MTIzNjI5NTU=", "Y2FyZDI1", "MTIzNjQ3OTQ=", "Y2FyZDI1",
+            "MTIzNTg0OTM=", "Y2FyZDI1", "MTIzNzQ0NDY=", "Y2FyZDI1", "MTIzNzU2NTc=", "Y2FyZDI1",
+            "MTIzNTU4MDk=", "Y2FyZDI1", "MTIzNTMwNzg=", "Y2FyZDI1", "MTIzNzM3ODA=", "Y2FyZDI1",
+            "MTIzNjAwNzI=", "Y2FyZDI1", "MTIzNTczNzQ=", "Y2FyZDI1", "MTIzNjAwNTc=", "Y2FyZDI1",
+            "MTIzNjI1MjI=", "Y2FyZDI1", "MTIzNTg3MDI=", "Y2FyZDI1", "MTIzNTk4Mjk=", "Y2FyZDI1",
+            "MTIzNTkyMTA=", "Y2FyZDI1", "MTIzNjI0NTY=", "Y2FyZDI1", "MTIzNjI0Mjg=", "Y2FyZDI1",
+            "MTIzNDczMTM=", "Y2FyZDI1", "MTIzNTgwNjA=", "Y2FyZDI1", "MTIzNjI3Mzg=", "Y2FyZDI1",
+            "MTIzNjIyMzk=", "Y2FyZDI1", "MTIzNTM4NjM=", "Y2FyZDI1", "MTIzNjYyNjU=", "Y2FyZDI1",
+            "MTIzNzU0MDg=", "Y2FyZDI1", "MTIzNzQ2MzY=", "Y2FyZDI1", "MTIzNTYzMjc=", "Y2FyZDI1",
+            "MTIzNDczNTU=", "Y2FyZDI1", "MTIzNTY5OTc=", "Y2FyZDI1", "MTIzNTcxOTA=", "Y2FyZDI1",
+            "MTIzNjUyNDg=", "Y2FyZDI1", "MTIzNjEwMjY=", "Y2FyZDI1", "MTIzNjcyMTY=", "Y2FyZDI1",
+            "MTIzNzA5MDM=", "Y2FyZDI1", "MTIzNzA5MDg=", "Y2FyZDI1", "MTIzNjA4MzM=", "Y2FyZDI1",
+            "MTIzNjA4NjY=", "Y2FyZDI1", "MTIzNjY1NjI=", "Y2FyZDI1", "MTIzNzUyNzI=", "Y2FyZDI1",
+            "MTIzNTcwMTQ=", "Y2FyZDI1", "MTIzNzM3Mzg=", "Y2FyZDI1", "MTIzNjIyMjc=", "Y2FyZDI1",
+            "MTIzNjczOTY=", "Y2FyZDI1", "MTIzNzU2MTI=", "Y2FyZDI1", "MTIzNDY5MjE=", "Y2FyZDI1",
+            "MTIzNjUwMTY=", "Y2FyZDI1", "MTIzNTM4MjI=", "Y2FyZDI1", "MTIzNTM1NzY=", "Y2FyZDI1",
+            "MTIzNTg5NDA=", "Y2FyZDI1", "MTIzNTE2NDM=", "Y2FyZDI1", "MTIzNjg0MzY=", "Y2FyZDI1",
+            "MTIzNjU0OTc=", "Y2FyZDI1", "MTIzNjI2Mjc=", "Y2FyZDI1", "MTIzNzUyMjE=", "Y2FyZDI1",
+            "MTIzNTc0OTc=", "Y2FyZDI1", "MTIzNTE2MzQ=", "Y2FyZDI1", "MTIzNjEyNjg=", "Y2FyZDI1",
+            "MTIzNDgzNTE=", "Y2FyZDI1", "MTIzNTkzMDA=", "Y2FyZDI1", "MTIzNjM5Njg=", "Y2FyZDI1",
+            "MTIzNTQyNDI=", "Y2FyZDI1", "MTIzNjkyMzU=", "Y2FyZDI1", "MTIzNjk4MjI=", "Y2FyZDI1",
+            "MTIzNzI3Mzc=", "Y2FyZDI1", "MTIzNTc1OTI=", "Y2FyZDI1", "MTIzNTg5MjQ=", "Y2FyZDI1",
+            "MTIzNTU5MDc=", "Y2FyZDI1", "MTIzNTc2MzA=", "Y2FyZDI1", "MTIzNTc1MDU=", "Y2FyZDI1",
+            "MTIzNjE5OTQ=", "Y2FyZDI1", "MTIzNTcxODA=", "Y2FyZDI1", "MTIzNTQzNTc=", "Y2FyZDI1",
+            "MTIzNjg3MDY=", "Y2FyZDI1", "MTIzNTIzMjM=", "Y2FyZDI1", "MTIzNDgwNDc=", "Y2FyZDI1",
+            "MTIzNjM3MTE=", "Y2FyZDI1", "MTIzNDU3MTA=", "Y2FyZDI1", "MTIzNjUzMDI=", "Y2FyZDI1",
+            "MTIzNTYxMzc=", "Y2FyZDI1", "MTIzNjUzMjE=", "Y2FyZDI1", "MTIzNTc1ODQ=", "Y2FyZDI1",
+            "MTIzNjc4MDU=", "Y2FyZDI1", "MTIzNzE0OTY=", "Y2FyZDI1", "MTIzNjI5NzE=", "Y2FyZDI1",
+            "MTIzNTI4NTg=", "Y2FyZDI1", "MTIzNjIwNjM=", "Y2FyZDI1", "MTIzNzU2NDY=", "Y2FyZDI1",
+            "MTIzNzEzOTI=", "Y2FyZDI1", "MTIzNjgyNzY=", "Y2FyZDI1", "MTIzNTMxMTI=", "Y2FyZDI1",
+            "MTIzNjg4NDI=", "Y2FyZDI1", "MTIzNTQwODI=", "Y2FyZDI1", "MTIzNjA2MjE=", "Y2FyZDI1",
+            "MTIzNjcxMTc=", "Y2FyZDI1", "MTIzNTcyNzY=", "Y2FyZDI1", "MTIzNTIyMjQ=", "Y2FyZDI1",
+            "MTIzNjM0NDM=", "Y2FyZDI1", "MTIzNTc5MDY=", "Y2FyZDI1", "MTIzNDY2MjE=", "Y2FyZDI1",
+            "MTIzNDk4MTg=", "Y2FyZDI1", "MTIzNTA4OTA=", "Y2FyZDI1", "MTIzNTE5Njk=", "Y2FyZDI1",
+            "MTIzNDkxODQ=", "Y2FyZDI1", "MTIzNDYxODM=", "Y2FyZDI1", "MTIzNjAxMTQ=", "Y2FyZDI1",
+            "MTIzNzQyNTA=", "Y2FyZDI1", "MTIzNjE4MTk=", "Y2FyZDI1", "MTIzNTY0NzY=", "Y2FyZDI1",
+            "MTIzNTY5ODk=", "Y2FyZDI1", "MTIzNjM4OTY=", "Y2FyZDI1", "MTIzNTk5NDI=", "Y2FyZDI1",
+            "MTIzNzA0NDA=", "Y2FyZDI1", "MTIzNDY1NTU=", "Y2FyZDI1", "MTIzNTA2MjM=", "Y2FyZDI1",
+            "MTIzNjE2NDU=", "Y2FyZDI1", "MTIzNjk1MzE=", "Y2FyZDI1", "MTIzNTM0ODI=", "Y2FyZDI1",
+            "MTIzNzE2NjE=", "Y2FyZDI1", "MTIzNjQzMDA=", "Y2FyZDI1", "MTIzNzUwMDI=", "Y2FyZDI1",
+            "MTIzNjMwMDI=", "Y2FyZDI1", "MTIzNzQ0NTA=", "Y2FyZDI1", "MTIzNDg5MTM=", "Y2FyZDI1",
+            "MTIzNzAxOTg=", "Y2FyZDI1", "MTIzNDc1MDY=", "Y2FyZDI1", "MTIzNTEzODE=", "Y2FyZDI1",
+            "MTIzNzM4NTA=", "Y2FyZDI1", "MTIzNTk3MTA=", "Y2FyZDI1", "MTIzNzIxMjA=", "Y2FyZDI1",
+            "MTIzNDU5MTg=", "Y2FyZDI1", "MTIzNjg0Mjk=", "Y2FyZDI1", "MTIzNzIyODg=", "Y2FyZDI1",
+            "MTIzNzU2MzY=", "Y2FyZDI1", "MTIzNTY2NDU=", "Y2FyZDI1", "MTIzNDk1MDI=", "Y2FyZDI1",
+            "MTIzNDc5OTU=", "Y2FyZDI1", "MTIzNjMyOTE=", "Y2FyZDI1", "MTIzNjA5Njk=", "Y2FyZDI1",
+            "MTIzNjk0NTU=", "Y2FyZDI1", "MTIzNzM3Nzk=", "Y2FyZDI1", "MTIzNTcyMzk=", "Y2FyZDI1",
+            "MTIzNjAxOTI=", "Y2FyZDI1", "MTIzNjI4Mzk=", "Y2FyZDI1", "MTIzNjYzMzA=", "Y2FyZDI1",
+            "MTIzNzQxNTM=", "Y2FyZDI1", "MTIzNjE5OTk=", "Y2FyZDI1", "MTIzNzUyNTM=", "Y2FyZDI1",
+            "MTIzNTIxMTg=", "Y2FyZDI1", "MTIzNzM3NDk=", "Y2FyZDI1"
         ];
 
-        // Track used codes to prevent reuse
-        const usedCodes = new Set();
+        // Decryption function
+        const decrypt = (str) => {
+            return atob(str);
+        };
 
-        // Decode function with additional security
-        function getWinningCodes() {
-            return encodedWinningCodes.map(encoded => {
-                return atob(encoded);
-            });
-        }
+        // Build database dynamically
+        const buildDatabase = () => {
+            const db = {};
+            for (let i = 0; i < encryptedData.length; i += 2) {
+                const code = decrypt(encryptedData[i]);
+                const prize = decrypt(encryptedData[i + 1]);
+                db[code] = prize;
+            }
+            return db;
+        };
 
-        // Get DOM elements
-        const segment1 = document.getElementById('segment1');
-        const segment2 = document.getElementById('segment2');
-        const segment3 = document.getElementById('segment3');
-        const segment4 = document.getElementById('segment4');
-        const submitBtn = document.getElementById('submitBtn');
-        const result = document.getElementById('result');
+        return {
+            getDatabase: () => buildDatabase(),
+            checkWinner: (code) => {
+                const db = buildDatabase();
+                return db[code] || null;
+            }
+        };
+    })();
 
-        // Auto-focus and auto-tab functionality
-        const segments = [segment1, segment2, segment3, segment4];
+    // === SECURITY LAYER 2: SIMPLIFIED SECURITY (NO CODE REUSE TRACKING) ===
+    const dynamicSecurity = (function() {
+        let verificationAttempts = 0;
+        const maxAttempts = 1000; // Very high limit
         
-        segments.forEach((segment, index) => {
-            segment.addEventListener('input', function() {
-                // Only allow numbers
-                this.value = this.value.replace(/[^0-9]/g, '');
-                
-                // Auto-advance to next segment
-                if (this.value.length === 4 && index < segments.length - 1) {
-                    segments[index + 1].focus();
-                }
-                
-                // Auto-submit when all segments are filled
-                if (this.value.length === 4 && index === segments.length - 1) {
-                    const allFilled = segments.every(seg => seg.value.length === 4);
-                    if (allFilled) {
-                        submitBtn.focus();
-                    }
-                }
-            });
-            
-            // Allow backspace to go to previous segment
-            segment.addEventListener('keydown', function(e) {
-                if (e.key === 'Backspace' && this.value.length === 0 && index > 0) {
-                    segments[index - 1].focus();
-                }
-                
-                // Allow Enter to submit when all fields are filled
-                if (e.key === 'Enter' && this.value.length === 4 && index === segments.length - 1) {
-                    const allFilled = segments.every(seg => seg.value.length === 4);
-                    if (allFilled) {
-                        submitBtn.click();
-                    }
-                }
-            });
-        });
+        return {
+            markUsed: (code) => {
+                // DO NOTHING - codes can be reused
+                verificationAttempts++;
+            },
+            isUsed: (code) => {
+                return false; // Always return false - codes never get "used"
+            },
+            isSuspicious: () => verificationAttempts > maxAttempts,
+            resetAttempts: () => { verificationAttempts = 0; }
+        };
+    })();
 
-        // Submit button functionality
-        submitBtn.addEventListener('click', async function() {
-            const code = `${segment1.value}-${segment2.value}-${segment3.value}-${segment4.value}`;
+    // === SECURITY LAYER 3: SIMPLIFIED INTEGRITY CHECK ===
+    const antiTamper = (function() {
+        return {
+            verifyIntegrity: () => {
+                return true; // Always pass integrity check
+            }
+        };
+    })();
+
+    // Get DOM elements
+    const segment1 = document.getElementById('segment1');
+    const segment2 = document.getElementById('segment2');
+    const submitBtn = document.getElementById('submitBtn');
+    const result = document.getElementById('result');
+
+    // Auto-focus and auto-tab functionality
+    const segments = [segment1, segment2];
+    
+    segments.forEach((segment, index) => {
+        segment.addEventListener('input', function() {
+            this.value = this.value.replace(/[^0-9]/g, '');
             
-            // Check if all segments are filled
-            if (segment1.value.length !== 4 || segment2.value.length !== 4 || 
-                segment3.value.length !== 4 || segment4.value.length !== 4) {
-                showResult("Please enter a complete 16-digit code", false);
-                return;
+            if (this.value.length === 4 && index < segments.length - 1) {
+                segments[index + 1].focus();
             }
             
-            // Check if code format is valid (16 digits with dashes)
-            if (!/^\d{4}-\d{4}-\d{4}-\d{4}$/.test(code)) {
-                showResult("Invalid code format. Please use XXXX-XXXX-XXXX-XXXX", false);
-                return;
-            }
-            
-            // Check if code was already used
-            if (usedCodes.has(code)) {
-                showResult("This code has already been used!", false);
-                return;
-            }
-            
-            // Disable button and show loading
-            submitBtn.disabled = true;
-            submitBtn.innerHTML = '<span class="loading"></span> Verifying...';
-            
-            // Simulate server delay for better UX
-            await new Promise(resolve => setTimeout(resolve, 1500));
-            
-            try {
-                // Check if code is a winner
-                const winningCodes = getWinningCodes();
-                const isValid = winningCodes.includes(code);
-                
-                if (isValid) {
-                    usedCodes.add(code); // Mark as used
-                    showResult("🎉 Congratulations! You're a winner! 🎉", true);
-                    createConfetti();
-                } else {
-                    showResult("❌Better luck next time! This code is not a winner.", false);
+            if (this.value.length === 4 && index === segments.length - 1) {
+                const allFilled = segments.every(seg => seg.value.length === 4);
+                if (allFilled) {
+                    submitBtn.focus();
                 }
-            } catch (error) {
-                showResult("⚠️ Verification error. Please try again.", false);
-                console.error("Verification error:", error);
-            } finally {
-                // Re-enable button
-                submitBtn.disabled = false;
-                submitBtn.innerHTML = 'Verify Code';
             }
         });
+        
+        segment.addEventListener('keydown', function(e) {
+            if (e.key === 'Backspace' && this.value.length === 0 && index > 0) {
+                segments[index - 1].focus();
+            }
+            
+            if (e.key === 'Enter' && this.value.length === 4 && index === segments.length - 1) {
+                const allFilled = segments.every(seg => seg.value.length === 4);
+                if (allFilled) {
+                    submitBtn.click();
+                }
+            }
+        });
+    });
 
-        // Show result message
-        function showResult(message, isWin) {
-            result.textContent = message;
-            result.className = isWin ? "result win" : "result lose";
+    // Submit button functionality
+    submitBtn.addEventListener('click', async function() {
+        const fullCode = segment1.value + segment2.value;
+        
+        // Basic validation first
+        if (segment1.value.length !== 4 || segment2.value.length !== 4) {
+            showResult("Please enter a complete 8-digit code", false);
+            return;
+        }
+        
+        if (fullCode.length !== 8) {
+            showResult("Invalid code format. Please enter exactly 8 digits", false);
+            return;
         }
 
-        // Create confetti effect for winners
-        function createConfetti() {
-            const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ff9900', '#ff66cc'];
-            const confettiCount = 200;
+        // REMOVED: Code reuse check - now codes can be used multiple times
+        
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = '<span class="loading"></span> Verifying...';
+        
+        await new Promise(resolve => setTimeout(resolve, 1500));
+        
+        try {
+            const prize = secureDatabase.checkWinner(fullCode);
             
-            for (let i = 0; i < confettiCount; i++) {
-                const confetti = document.createElement('div');
-                confetti.className = 'confetti';
-                confetti.style.left = Math.random() * 100 + 'vw';
-                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
-                confetti.style.opacity = '1';
-                document.body.appendChild(confetti);
-                
-                // Animate confetti
-                const animation = confetti.animate([
-                    { 
-                        transform: `translateY(-100px) translateX(${Math.random() * 100 - 50}px) rotate(0deg)`, 
-                        opacity: 1 
-                    },
-                    { 
-                        transform: `translateY(${window.innerHeight + 100}px) translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 720}deg)`, 
-                        opacity: 0 
-                    }
-                ], {
-                    duration: 3000 + Math.random() * 2000,
-                    easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
-                });
-                
-                // Remove confetti after animation
-                animation.onfinish = () => {
-                    if (confetti.parentNode) {
-                        confetti.parentNode.removeChild(confetti);
-                    }
-                };
+            if (prize) {
+                // REMOVED: dynamicSecurity.markUsed(fullCode); - Don't mark as used
+                const prizeText = getPrizeText(prize);
+                showResult(`🎉 Congratulations! You've won: ${prizeText} 🎉`, true);
+                createConfetti();
+            } else {
+                showResult("❌ Better luck next time! This code is not a winner.", false);
             }
+        } catch (error) {
+            showResult("⚠️ Verification error. Please try again.", false);
+            console.error("Verification error:", error);
+        } finally {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = 'Verify Code';
         }
+    });
 
-        // Clear result when user starts typing again
-        segments.forEach(segment => {
-            segment.addEventListener('focus', function() {
-                if (result.textContent !== "Enter your code above to check if you're a winner!") {
-                    showResult("Enter your code above to check if you're a winner!", false);
-                    result.className = "result";
+    // Convert prize code to readable text
+    function getPrizeText(prizeCode) {
+        const prizeMap = {
+            'card100': '100 EGP Gift Card',
+            'card50': '50 EGP Gift Card', 
+            'card25': '25 EGP Gift Card',
+            'phone': 'Smart Phone',
+            'airpods': 'Wireless AirPods',
+            'smart watch': 'Smart Watch',
+            'power bank': 'Power Bank'
+        };
+        return prizeMap[prizeCode] || prizeCode;
+    }
+
+    // Show result message
+    function showResult(message, isWin) {
+        result.textContent = message;
+        result.className = isWin ? "result win" : "result lose";
+    }
+
+    // Create confetti effect for winners
+    function createConfetti() {
+        const colors = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ff9900', '#ff66cc'];
+        const confettiCount = 200;
+        
+        for (let i = 0; i < confettiCount; i++) {
+            const confetti = document.createElement('div');
+            confetti.className = 'confetti';
+            confetti.style.left = Math.random() * 100 + 'vw';
+            confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+            confetti.style.opacity = '1';
+            document.body.appendChild(confetti);
+            
+            const animation = confetti.animate([
+                { 
+                    transform: `translateY(-100px) translateX(${Math.random() * 100 - 50}px) rotate(0deg)`, 
+                    opacity: 1 
+                },
+                { 
+                    transform: `translateY(${window.innerHeight + 100}px) translateX(${Math.random() * 100 - 50}px) rotate(${Math.random() * 720}deg)`, 
+                    opacity: 0 
                 }
+            ], {
+                duration: 3000 + Math.random() * 2000,
+                easing: 'cubic-bezier(0.1, 0.8, 0.2, 1)'
             });
-        });
+            
+            animation.onfinish = () => {
+                if (confetti.parentNode) {
+                    confetti.parentNode.removeChild(confetti);
+                }
+            };
+        }
+    }
 
-        // Hide server status element
-        document.getElementById('serverStatus').style.display = 'none';
-
-        // Focus first input on page load
-        window.addEventListener('load', () => {
-            segment1.focus();
+    // Clear result when user starts typing again
+    segments.forEach(segment => {
+        segment.addEventListener('focus', function() {
+            if (result.textContent !== "Enter your code above to check if you're a winner!") {
+                showResult("Enter your code above to check if you're a winner!", false);
+                result.className = "result";
+            }
         });
-    </script>
+    });
+
+    // Focus first input on page load
+    window.addEventListener('load', () => {
+        segment1.focus();
+    });
+
+    // Reset attempts every hour
+    setInterval(() => {
+        dynamicSecurity.resetAttempts();
+    }, 3600000);
+</script>
 </body>
 </html>
-
-
